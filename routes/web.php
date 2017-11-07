@@ -13,10 +13,7 @@
 
 Route::get('/', 'MainPageController@index');
 
-Route::get('/textile', 'TextilesController@index');
 
-
-Route::get('/textile/{id}', 'TextilesController@show');
 
 Route::get('/admin',function(){
     return redirect('/admin/textile');
@@ -36,8 +33,17 @@ Route::get('/admin/textile/delete/{id}','AdminController@textile_delete');
 
 Route::get('/admin/project','ProjectController@index');
 Route::get('/admin/project/list/','ProjectController@project_list');
+Route::post('/admin/project/add','ProjectController@project_add');
+Route::post('/admin/project/edit/{id}','ProjectController@project_edit');
+Route::get('/admin/project/delete/{id}','ProjectController@project_delete');
+Route::get('/admin/project/info/{id}','ProjectController@getProjectInfo');
 
 
+Route::get('/textile', 'TextilesController@index');
 
+
+Route::get('/textile/{id}', 'TextilesController@show');
+
+Route::get('/{project_name}/{id}', 'TextilesController@show2');
 
 

@@ -17,6 +17,7 @@ class CreatTextilesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->text('detail');
+            $table->text('textile_number');
             $table->integer('project_id');
             $table->timestamp('created_at');
         });
